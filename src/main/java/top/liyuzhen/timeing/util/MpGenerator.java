@@ -30,15 +30,15 @@ public class MpGenerator {
     /**
      * 实体父类
      */
-    private static final String DEFAULT_ENTITY_SUPER_CLASS="top.liyuzhen.mpg.util.BaseModel";
+    private static final String DEFAULT_ENTITY_SUPER_CLASS="top.liyuzhen.timeing.util.BaseModel";
 
     /**
      * 实体和父类公用字段
      */
     private static final String[] DEFAULT_ENTITY_COMMON_COLUMNS = new String[]{"id", "is_del", "create_user_id", "create_time", "update_user_id", "update_time"};
-    private static final String DEFAULT_URL = "jdbc:mysql:///aa?useUnicode=true&characterEncoding=utf8&useSSL=false";
+    private static final String DEFAULT_URL = "jdbc:mysql://182.61.11.218/timeing?useUnicode=true&characterEncoding=utf8&useSSL=false";
     private static final String DEFAULT_USERNAME = "root";
-    private static final String DEFAULT_PASSWORD = "root";
+    private static final String DEFAULT_PASSWORD = "112233456!";
 
     private static boolean DEFAULT_IS_NEED_ENTITY_SUPER_CLASS = true;
 

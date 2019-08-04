@@ -15,7 +15,7 @@ public class MpG {
         String projectPath = MpG.class.getResource("/").getPath().replace("/target/classes", "");
         MpGeneratorConfig config = new MpGeneratorConfig();
         //指定表名
-        config.setTables(new String[]{"t_user"});
+        config.setTables(new String[]{"t_user","t_task"});
         config.setProjectPath(projectPath);
         config.setBasePackage(MpG.class.getPackage().getName());
         MpGenerator mpGenerator = new MpGenerator(config);
