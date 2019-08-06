@@ -28,7 +28,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/baidu/{id}")
+    @GetMapping("/baidu/{id}")//根据id查找用户
     public User getUserById(@PathVariable("id") String id) {
         return userService.getById(id);
     }
