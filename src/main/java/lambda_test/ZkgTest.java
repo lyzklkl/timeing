@@ -9,7 +9,7 @@ import java.util.List;
  * @version 1.0
  * @date 2019-08-06 14:57
  */
-public class ZKGTest {
+public class ZkgTest {
 
     public static void main(String[] args) {
 
