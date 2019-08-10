@@ -1,5 +1,6 @@
 package top.liyuzhen.timeing.util;
 
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
@@ -8,7 +9,6 @@ import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -257,12 +257,12 @@ public class MpGenerator {
         this.config.setProjectPath(projectPath);
         this.config.setBasePackage(basePackage);
 
-        if (StringUtils.isNotBlank(presix)) {
+        if (StrUtil.isBlank(presix)) {
             this.config.setPresix(presix);
         }
 
         if (isneedEntitySuperClass) {
-            if (StringUtils.isNotBlank(entitySuperClass)) {
+            if (StrUtil.isBlank(entitySuperClass)) {
                 this.config.setEntitySuperClass(entitySuperClass);
             }
             if (entityCommonColumns != null && entityCommonColumns.length > 0) {
@@ -273,23 +273,23 @@ public class MpGenerator {
             this.config.setEntityCommonColumns(null);
         }
 
-        if (StringUtils.isNotBlank(url)) {
+        if (StrUtil.isBlank(url)) {
             this.config.setUrl(url);
         }
 
-        if (StringUtils.isNotBlank(username)) {
+        if (StrUtil.isBlank(username)) {
             this.config.setUsername(username);
         }
 
-        if (StringUtils.isNotBlank(password)) {
+        if (StrUtil.isBlank(password)) {
             this.config.setPassword(password);
         }
 
-        if (StringUtils.isNotBlank(driverName)) {
+        if (StrUtil.isBlank(driverName)) {
             this.config.setDriverName(driverName);
         }
 
-        if (StringUtils.isNotBlank(authorName)) {
+        if (StrUtil.isBlank(authorName)) {
             this.config.setAuthorName(authorName);
         }
 
