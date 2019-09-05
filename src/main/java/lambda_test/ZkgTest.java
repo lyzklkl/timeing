@@ -32,13 +32,36 @@ public class ZkgTest {
          * 例子: 男女生比例::[1:1]
          * 格式说明: 左边为男生数量,右边为女生数量,中间加冒号
          */
+            int a =0;
+            int b =0;
+            int c=0;
+            int d=0;
+        for (int i = 0; i < userList.size(); i++) {
+            User user = userList.get(i);
+            if (user.getGender()==0) {
+                a++;
+            }else {b++;}
 
+        }
+        System.out.println("["+a+":"+b+"}");
         /*
          * 题目2: 统计 男生 完成的 任务数量
          * 男生完成的任务数量::[3]
          * 格式说明: 直接显示数字
          */
+        for (int i1 = 0; i1 < taskList.size(); i1++) {
+            Task task = taskList.get(i1);
+            String userId = task.getUserId();
+            for (int i = 0; i < userList.size(); i++) {
+                User user = userList.get(i);
+                String userId1 = user.getUserId();
+                if (userId==userId1&&user.getGender()==1){
+                    c++;
+                }
+            }
 
+        }
+        System.out.println("["+c+"}");
         /*
          * 题目3: 显示 完成 3个任务及以上的任务的男生及完成数量
          * 例子: 完成3个任务及以上以男生::[{李玉泽=3, 万荣轩=4}]
