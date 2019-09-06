@@ -28,9 +28,9 @@ public class ZkgTest {
         List<Task> taskList = Task.getTaskList();
 
         /*
-         * 题目1: 统计 男生 比例
-         * 例子: 男女生比例::[1:1]
-         * 格式说明: 左边为男生数量,右边为女生数量,中间加冒号
+         * 题目1: 统计 男女 数量 各是多少
+         * 例子: 男生为: 5人, 女生为 5人
+         * 格式说明: 显示男女数量
          */
 
         //获取男生数量
@@ -39,11 +39,8 @@ public class ZkgTest {
         //获取女生数量
         int woman = (int) userList.stream().filter(u -> u.getGender() == 1).count();
 
-        //获得最大公约数
-        int divisor = NumberUtil.divisor(man, woman);
-
         //打印记录
-        log.info("男女生比例::[{}:{}]",man/divisor,woman/divisor);
+        log.info("男生为: {}人, 女生为 {}人",man,woman);
 
 
         /*
@@ -53,7 +50,7 @@ public class ZkgTest {
          */
 
         //获取到所以的 男的id
-        List<String> userId2 = userList.stream().filter(u -> u.getGender() == 0).map(u -> u.getUserId()).collect(Collectors.toList());
+        List<String> userId2 = userList.stream().filter(u -> u.getGender() == 0).map(User::getUserId).collect(Collectors.toList());
 
         //获取所有完成的任务
         List<Task> taskList2 = taskList.stream().filter(t -> t.getStatus() == 1).collect(Collectors.toList());
